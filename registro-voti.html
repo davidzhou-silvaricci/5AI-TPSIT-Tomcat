@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>Home - Registro voti</title>
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit-icons.min.js"></script>
+	</head>
+	<body>
+        <div class="uk-container uk-padding-large">
+            <h1 class="uk-margin-medium">Registro voti</h1>
+            <div class="uk-inline">
+				<button class="uk-button uk-button-default uk-margin-small-right" type="button">Registrazione</button>
+				<div uk-dropdown>
+					<ul class="uk-nav uk-dropdown-nav">
+						<li><a href="registrazione.html?tipo=studente">Studente</a></li>
+						<li><a href="registrazione.html?tipo=docente">Docente</a></li>
+					</ul>
+				</div>
+				<a class="uk-button uk-button-default uk-margin-small-right" href="nuova-materia.html">Nuova materia</a>
+				<button class="uk-button uk-button-primary" type="button">Elenco</button>
+				<div uk-dropdown>
+					<ul class="uk-nav uk-dropdown-nav">
+						<li><a href="elenco.jsp?tipo=studente">Studenti</a></li>
+						<li><a href="elenco.jsp?tipo=docente">Docenti</a></li>
+						<li><a href="elenco.jsp?tipo=materia">Materie</a></li>
+					</ul>
+				</div>
+			</div>
+        </div>
+	</body>
+</html>

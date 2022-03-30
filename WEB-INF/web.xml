@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<servlet>
+		<servlet-name>hello</servlet-name>
+		<servlet-class>PrimaServlet5ai</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/PrimaServlet5ai</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Somma</servlet-name>
+		<servlet-class>SommaNumeri</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Somma</servlet-name>
+		<url-pattern>/SommaNumeri</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Registrazione</servlet-name>
+		<servlet-class>Registrazione</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Registrazione</servlet-name>
+		<url-pattern>/Registrazione</url-pattern>
+	</servlet-mapping>
+</web-app>
