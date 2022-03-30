@@ -8,6 +8,7 @@
 		<servlet-name>hello</servlet-name>
 		<url-pattern>/prima-servlet-5ai</url-pattern>
 	</servlet-mapping>
+
 	<servlet>
 		<servlet-name>Somma</servlet-name>
 		<servlet-class>SommaNumeri</servlet-class>
@@ -16,6 +17,7 @@
 		<servlet-name>Somma</servlet-name>
 		<url-pattern>/somma-numeri</url-pattern>
 	</servlet-mapping>
+
 	<servlet>
 		<servlet-name>Registrazione</servlet-name>
 		<servlet-class>Registrazione</servlet-class>
@@ -24,4 +26,13 @@
 		<servlet-name>Registrazione</servlet-name>
 		<url-pattern>/registrazione</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Elenco</servlet-name>
+		<servlet-class>Elenco<servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Elenco</servlet-name>
+		<url-pattern>/elenco</url-pattern>
+	<servlet-mapping>
 </web-app>
