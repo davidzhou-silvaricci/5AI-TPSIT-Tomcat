@@ -6,7 +6,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>hello</servlet-name>
-		<url-pattern>/PrimaServlet5ai</url-pattern>
+		<url-pattern>/prima-servlet-5ai</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>Somma</servlet-name>
@@ -14,7 +14,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Somma</servlet-name>
-		<url-pattern>/SommaNumeri</url-pattern>
+		<url-pattern>/somma-numeri</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>Registrazione</servlet-name>
@@ -22,6 +22,6 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Registrazione</servlet-name>
-		<url-pattern>/Registrazione</url-pattern>
+		<url-pattern>/registrazione</url-pattern>
 	</servlet-mapping>
 </web-app>
