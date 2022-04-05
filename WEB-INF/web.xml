@@ -29,10 +29,10 @@
 	
 	<servlet>
 		<servlet-name>Elenco</servlet-name>
-		<servlet-class>Elenco<servlet-class>
+		<servlet-class>Elenco</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Elenco</servlet-name>
 		<url-pattern>/elenco</url-pattern>
-	<servlet-mapping>
+	</servlet-mapping>
 </web-app>

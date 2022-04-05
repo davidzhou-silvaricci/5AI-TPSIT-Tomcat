@@ -1,3 +1,6 @@
+<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 	<head>
 		<title>Elenco - Registro voti</title>
@@ -17,18 +20,18 @@
                 <thead>
                     <tr>
                         <c:forEach items="${campi}" var="campo">
-                            <th>${campo}</th>
+                            <th><c:out value="${campo}"/></th>
                         </c:forEach>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <c:forEach items="${elenco}" var="dati">
+                    <c:forEach items="${elenco}" var="dati">
+                        <tr>
                             <c:forEach items="${dati}" var="dato">
                                 <td>${dato}</td>
                             </c:forEach>
-                        </c:forEach>
-                    </tr>
+                        </tr>
+                    </c:forEach>
                 </tbody>
             </table>
 
