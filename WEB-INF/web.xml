@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app>
 	<servlet>
-		<servlet-name>hello</servlet-name>
+		<servlet-name>Hello World</servlet-name>
 		<servlet-class>PrimaServlet5ai</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>hello</servlet-name>
-		<url-pattern>/prima-servlet-5ai</url-pattern>
+		<servlet-name>Hello World</servlet-name>
+		<url-pattern>/prima-servlet</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
