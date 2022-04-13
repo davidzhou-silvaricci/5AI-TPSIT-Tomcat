@@ -10,16 +10,28 @@
         <!-- UIkit JS -->
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit-icons.min.js"></script>
+
+        <!-- DataTables CSS -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.uikit.min.css" />
+
+        <!-- DataTables JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.5/js/dataTables.uikit.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $('#table').DataTable();
+            });
+        </script>
 	</head>
 	<body>
-        <!-- Nella servlet Elenco aggiungere il controllo del parametro tipo (studente, docente, materia) -->
-
         <div class="uk-grid-collapse" uk-grid>
 			<div class="uk-width-1-5@s">
 				<div>
-					<div class="uk-card uk-card-body" uk-height-viewport>
+					<div class="uk-card uk-card-secondary uk-card-body uk-position-fixed uk-width-1-5" uk-height-viewport>
 						<ul class="uk-nav-default uk-nav-parent-icon uk-margin-small-top" uk-nav>
-							<li class="uk-active"><a href="registro-voti.html"><span class="uk-margin-small-right" uk-icon="icon: home"></span>Dashboard</a></li>
+							<li><a href="registro-voti.html"><span class="uk-margin-small-right" uk-icon="icon: home"></span>Dashboard</a></li>
 							<li class="uk-nav-header">Elenchi</li>
 							<li><a href="elenco?tipo=studente"><span class="uk-margin-small-right" uk-icon="icon: table"></span>Studenti</a></li>
 							<li><a href="elenco?tipo=docente"><span class="uk-margin-small-right" uk-icon="icon: table"></span>Docenti</a></li>
@@ -30,19 +42,12 @@
 			</div>
 			<div class="uk-width-expand">
 				<div>
-					<div class="uk-card uk-card-default uk-card-body" uk-height-viewport>
-                        <div class="uk-flex uk-flex-between uk-flex-top">
+					<div class="uk-card uk-card-body uk-margin-medium-left uk-margin-medium-right" uk-height-viewport>
+                        <div class="uk-flex uk-flex-between uk-flex-top uk-margin-bottom">
                             <h1 id="title">${nome_elenco_plurale}</h1>
-                            <c:choose>
-                                <c:when test="${nome_elenco=='materia'}">
-                                    <a class="uk-button uk-button-primary uk-margin-small-right" href="nuova-materia.html">Aggiungi</a>
-                                </c:when>    
-                                <c:otherwise>
-                                    <a class="uk-button uk-button-primary uk-margin-small-right" href="registrazione.html?tipo=${nome_elenco}">Aggiungi</a>
-                                </c:otherwise>
-                            </c:choose>
+                            <a class="uk-button uk-button-primary uk-margin-small-right" href="nuovo?tipo=${nome_elenco}">Aggiungi</a>
                         </div>
-                        <table class="uk-table uk-table-striped uk-table-hover">
+                        <table id="table" class="uk-table uk-table-striped uk-table-hover">
                             <thead>
                                 <tr>
                                     <c:forEach items="${campi}" var="campo">

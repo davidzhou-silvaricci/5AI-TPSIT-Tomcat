@@ -24,7 +24,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Registrazione</servlet-name>
-		<url-pattern>/registrazione</url-pattern>
+		<url-pattern>/nuovo</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
@@ -35,4 +35,12 @@
 		<servlet-name>Elenco</servlet-name>
 		<url-pattern>/elenco</url-pattern>
 	</servlet-mapping>
+	<servlet>
+        <servlet-name>Lista nazioni</servlet-name>
+        <servlet-class>ListaNazioni</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Lista nazioni</servlet-name>
+        <url-pattern>/nazioni</url-pattern>
+    </servlet-mapping>
 </web-app>
