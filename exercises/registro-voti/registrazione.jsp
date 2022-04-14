@@ -10,20 +10,14 @@
         <!-- UIkit JS -->
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.11.1/dist/js/uikit-icons.min.js"></script>
+
+        <script src="lorem-ipsum.js"></script>
 	</head>
 	<body>
         <div class="uk-grid-collapse" uk-grid>
 			<div class="uk-width-1-5@s">
 				<div>
-					<div class="uk-card uk-card-secondary uk-card-body uk-position-fixed uk-width-1-5" uk-height-viewport>
-						<ul class="uk-nav-default uk-nav-parent-icon uk-margin-small-top" uk-nav>
-							<li><a href="registro-voti.html"><span class="uk-margin-small-right" uk-icon="icon: home"></span>Dashboard</a></li>
-							<li class="uk-nav-header">Elenchi</li>
-							<li><a href="elenco?tipo=studente"><span class="uk-margin-small-right" uk-icon="icon: table"></span>Studenti</a></li>
-							<li><a href="elenco?tipo=docente"><span class="uk-margin-small-right" uk-icon="icon: table"></span>Docenti</a></li>
-							<li><a href="elenco?tipo=materia"><span class="uk-margin-small-right" uk-icon="icon: table"></span>Materie</a></li>
-						</ul>
-					</div>
+                    <%@ include file="menu.jsp" %>
 				</div>
 			</div>
 			<div class="uk-width-expand">
@@ -45,9 +39,17 @@
                                         <div class="uk-form-controls">
                                             <textarea class="uk-textarea" id="descrizione" name="descrizione" rows="5" placeholder="Una breve descrizione opzionale"></textarea>
                                         </div>
+                                        <a class="uk-button uk-width-expand" onclick="generaDescrizione()"><span class="uk-margin-small-right" uk-icon="icon: bolt"></span>Genera descrizione</a>
                                     </div>
                                 </c:when>    
                                 <c:otherwise>
+                                    <div class="uk-margin">
+                                        <label class="uk-form-label" for="nome">Codice fiscale</label>
+                                        <div class="uk-form-controls uk-inline uk-width-expand">
+                                            <a class="uk-form-icon uk-form-icon-flip" onclick="generaCF()" uk-icon="icon: bolt" uk-tooltip="title: Genera; pos: right; delay: 250"></a>
+                                            <input class="uk-input" id="codice_fiscale" name="codice_fiscale" type="text" placeholder="RSSMRA80A01E512X" pattern="^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$" required>
+                                        </div>
+                                    </div>
                                     <div class="uk-margin">
                                         <label class="uk-form-label" for="nome">Nome</label>
                                         <div class="uk-form-controls">
@@ -62,11 +64,11 @@
                                     </div>
                                     <div class="uk-margin">
                                         <label class="uk-form-label" for="email">Email</label>
-                                        <div class="uk-form-controls">
-                                            <input class="uk-input" id="email" name="email" type="email" placeholder="esempio@mail.it" required>
+                                        <div class="uk-form-controls uk-inline uk-width-expand">
+                                            <a class="uk-form-icon uk-form-icon-flip uk-padding-remove-left" onclick="generaEmail()" uk-icon="icon: bolt" uk-tooltip="title: Genera; pos: right; delay: 250"></a>
+                                            <input class="uk-input" id="email" name="email" type="email" placeholder="rossi@mail.it" required>
                                         </div>
                                     </div>
-                                
                                     <div class="uk-margin">
                                         <div class="uk-form-label">Genere</div>
                                         <div class="uk-form-controls">
@@ -107,7 +109,42 @@
                 document.getElementById("form").appendChild(input);
             }
             else {
-                window.location.replace("registro-voti.html");
+                window.location.replace("index.jsp");
+            }
+            // Generazione email casuale
+            function generaEmail()
+            {
+                var chars = "abcdefghijklmnopqrstuvwxyz1234567890";
+                var string = "";
+                for(var i=0; i<15; i++) {
+                    string += chars[Math.floor(Math.random() * chars.length)];
+                }
+                document.getElementById("email").value = string + "@mail.com";
+            }
+            function generaCF()
+            {
+                var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                var nums = "1234567890";
+                var string = "";
+                for(var i=0; i<16; i++)
+                {
+                    // X   X   X   X   X   X   D   D   X   D   D   X   D   D   D   X
+                    // 0   1   2   3   4   5   6   7   8   9   10  11  12  13  14  15
+                    // X = carattere alfabetico
+                    // D = carattere numerico
+                    if(i==6 || i==7 || i==9 || i==10 || (i>11 && i<15)) {
+                        string += nums[Math.floor(Math.random() * nums.length)];
+                    }
+                    else {
+                        string += chars[Math.floor(Math.random() * chars.length)];
+                    }
+                    console.log(i);
+                }
+                document.getElementById("codice_fiscale").value = string;
+            }
+            function generaDescrizione() {
+                var ipsum = new LoremIpsum();
+                document.getElementById("descrizione").value = ipsum.paragraph();
             }
         </script>
 	</body>

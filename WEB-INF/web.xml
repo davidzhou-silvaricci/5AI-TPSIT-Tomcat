@@ -6,7 +6,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Hello World</servlet-name>
-		<url-pattern>/prima-servlet</url-pattern>
+		<url-pattern>/exercises/prima-servlet</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -15,7 +15,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Somma</servlet-name>
-		<url-pattern>/somma-numeri</url-pattern>
+		<url-pattern>/exercises/somma-numeri</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -24,7 +24,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Registrazione</servlet-name>
-		<url-pattern>/nuovo</url-pattern>
+		<url-pattern>/exercises/registro-voti/nuovo</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
@@ -33,7 +33,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Elenco</servlet-name>
-		<url-pattern>/elenco</url-pattern>
+		<url-pattern>/exercises/registro-voti/elenco</url-pattern>
 	</servlet-mapping>
 	<servlet>
         <servlet-name>Lista nazioni</servlet-name>
@@ -41,6 +41,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Lista nazioni</servlet-name>
-        <url-pattern>/nazioni</url-pattern>
+        <url-pattern>/exercises/nazioni/mostra</url-pattern>
     </servlet-mapping>
 </web-app>

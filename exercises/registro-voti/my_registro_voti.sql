@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Apr 13, 2022 alle 16:39
+-- Creato il: Apr 14, 2022 alle 12:49
 -- Versione del server: 10.4.22-MariaDB
 -- Versione PHP: 8.1.2
 
@@ -30,21 +30,20 @@ USE `my_registro_voti`;
 --
 
 CREATE TABLE IF NOT EXISTS `docente` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `codice_fiscale` char(16) NOT NULL,
   `nome` varchar(20) NOT NULL,
   `cognome` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `genere` char(15) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`codice_fiscale`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `docente`
 --
 
-INSERT INTO `docente` (`id`, `nome`, `cognome`, `email`, `genere`) VALUES
-(1, 'Giacomo', 'Bartolomeo', 'giacomo@mail.it', 'M'),
-(2, 'Giulia', 'Pettorosso', 'giulia@rossi.com', 'F');
+INSERT INTO `docente` (`codice_fiscale`, `nome`, `cognome`, `email`, `genere`) VALUES
+('RSSMRA80A01E512X', 'Mario', 'Rossi', 'esempio@mail.it', 'M');
 
 -- --------------------------------------------------------
 
@@ -63,9 +62,8 @@ CREATE TABLE IF NOT EXISTS `materia` (
 --
 
 INSERT INTO `materia` (`nome`, `descrizione`) VALUES
-('Inglese', 'Lorem ipsum'),
-('Italiano', 'La lingua italiana nasce dall\'evoluzione attraverso i secoli del latino e, più precisamente, del latino parlato.'),
-('Matematica', 'Lorem ipsum');
+('Italiano', 'Velit duis in potenti aenean tristique dictumst lorem. Duis at molestie cras nisl, lectus aliquam accumsan hac. Pretium mi torquent auctor platea, vulputate ultrices, mollis turpis. Ultrices a quisque taciti nunc vehicula, curabitur elit tempus aliquet curabitur!'),
+('Matematica', 'Sagittis suspendisse curabitur mattis laoreet nibh habitant varius risus facilisis tortor cras, tempus commodo ultricies libero sem aliquam inceptos. Elementum imperdiet sagittis porta bibendum risus, a curae. Eros class rhoncus hendrerit, a lobortis id interdum, sapien at dui venenatis!');
 
 -- --------------------------------------------------------
 
@@ -74,23 +72,21 @@ INSERT INTO `materia` (`nome`, `descrizione`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `studente` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `codice_fiscale` char(16) NOT NULL,
   `nome` varchar(20) NOT NULL,
   `cognome` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `genere` char(15) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`codice_fiscale`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `studente`
 --
 
-INSERT INTO `studente` (`id`, `nome`, `cognome`, `email`, `genere`) VALUES
-(1, 'Mario', 'Rossi', 'mario@mail.it', 'M'),
-(2, 'Giulia', 'Verdi', 'giulia@mail.it', 'F'),
-(3, 'Filippo', 'Neri', 'filippo@mail.it', 'X'),
-(4, 'Test', 'Test', 'test@test.it', 'M');
+INSERT INTO `studente` (`codice_fiscale`, `nome`, `cognome`, `email`, `genere`) VALUES
+('IURZQR98K87J824M', 'Marco', 'Neri', '7dycxk7zqvsy37o@mail.com', 'M'),
+('THORTN92A03F137G', 'Luisa', 'Marte', '914gflml9atfdhu@mail.com', 'F');
 
 -- --------------------------------------------------------
 
@@ -102,13 +98,13 @@ CREATE TABLE IF NOT EXISTS `test` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `voto` int(11) NOT NULL,
   `data` date NOT NULL,
-  `studente_id` int(11) NOT NULL,
+  `studente_cf` char(16) NOT NULL,
   `materia_nome` varchar(50) NOT NULL,
-  `docente_id` int(11) NOT NULL,
+  `docente_cf` char(16) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `studente_id` (`studente_id`),
+  KEY `studente_cf` (`studente_cf`),
   KEY `materia_nome` (`materia_nome`),
-  KEY `docente_id` (`docente_id`)
+  KEY `docente_cf` (`docente_cf`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -119,9 +115,9 @@ CREATE TABLE IF NOT EXISTS `test` (
 -- Limiti per la tabella `test`
 --
 ALTER TABLE `test`
-  ADD CONSTRAINT `test_ibfk_1` FOREIGN KEY (`studente_id`) REFERENCES `studente` (`id`),
+  ADD CONSTRAINT `test_ibfk_1` FOREIGN KEY (`studente_cf`) REFERENCES `studente` (`codice_fiscale`),
   ADD CONSTRAINT `test_ibfk_2` FOREIGN KEY (`materia_nome`) REFERENCES `materia` (`nome`),
-  ADD CONSTRAINT `test_ibfk_3` FOREIGN KEY (`docente_id`) REFERENCES `docente` (`id`);
+  ADD CONSTRAINT `test_ibfk_3` FOREIGN KEY (`docente_cf`) REFERENCES `docente` (`codice_fiscale`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

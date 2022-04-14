@@ -1,1 +1,1 @@
-![5AI TPSIT](resources/banner.png)
+![5AI TPSIT](banner.png)
