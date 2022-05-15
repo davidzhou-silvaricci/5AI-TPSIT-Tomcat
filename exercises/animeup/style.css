@@ -1,0 +1,55 @@
+/* Hide scrollbar */
+
+.snap-x::-webkit-scrollbar {
+    display: none;
+}
+
+.snap-x {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Group 2 */
+
+/*.group-2:hover .group-2-hover-darken {
+    color: rgb(156 163 175);
+}*/
+
+/* Animations */
+
+.hover-slide {
+	-webkit-animation: slide 1s ease-out both;
+    animation: slide 1s ease-out both;
+}
+
+@-webkit-keyframes slide
+{
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    50% {
+        -webkit-transform: translateX(1rem);
+        transform: translateX(1rem);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide
+{
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    50% {
+        -webkit-transform: translateX(1rem);
+        transform: translateX(1rem);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}

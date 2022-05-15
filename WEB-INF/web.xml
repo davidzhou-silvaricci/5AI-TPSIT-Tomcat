@@ -35,6 +35,7 @@
 		<servlet-name>Elenco</servlet-name>
 		<url-pattern>/exercises/registro-voti/elenco</url-pattern>
 	</servlet-mapping>
+
 	<servlet>
         <servlet-name>Lista nazioni</servlet-name>
         <servlet-class>ListaNazioni</servlet-class>
@@ -42,5 +43,14 @@
     <servlet-mapping>
         <servlet-name>Lista nazioni</servlet-name>
         <url-pattern>/exercises/nazioni/mostra</url-pattern>
+    </servlet-mapping>
+
+	<servlet>
+        <servlet-name>AnimeUp</servlet-name>
+        <servlet-class>AnimeUp</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AnimeUp</servlet-name>
+        <url-pattern>/exercises/animeup/home</url-pattern>
     </servlet-mapping>
 </web-app>
