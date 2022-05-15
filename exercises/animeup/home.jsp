@@ -30,10 +30,10 @@
         </div>
         <div id="0" class="marquee3k" data-pausable="true">
             <div class="mb-6 py-4 font-bold text-3xl text-gray-300 border border-x-0 border-y-2 uppercase italic transition-colors duration-500 select-none">
-                <span class="mr-4">Più popolari</span><i class="mr-4 fa-solid fa-caret-up"></i><span class="mr-4">Most popular</span><i class="mr-4 fa-solid fa-caret-up"></i>
+                <span class="mr-4">In tendenza</span><i class="mr-4 fa-solid fa-caret-up"></i><span class="mr-4">Trending</span><i class="mr-4 fa-solid fa-caret-up"></i>
             </div>
         </div>
-        <div class="below-m3k mb-16 overflow-hidden">
+        <div class="below-m3k mb-16">
             <div class="animate-slide snap-x grid grid-rows-1 grid-flow-col auto-cols-max overflow-x-scroll gap-4">
                 <c:forEach items="${bypopularity}" var="anime">
                     <div class="snap-start relative group w-36 sm:w-44 lg:w-52 aspect-w-2 aspect-h-3 rounded-lg overflow-hidden">
@@ -51,7 +51,7 @@
                 <span class="mr-4">In corso</span><i class="mr-4 fa-solid fa-caret-up"></i><span class="mr-4">Ongoing</span><i class="mr-4 fa-solid fa-caret-up"></i>
             </div>
         </div>
-        <div class="below-m3k mb-16 overflow-hidden">
+        <div class="below-m3k mb-16">
             <div class="animate-slide snap-x grid grid-rows-1 grid-flow-col auto-cols-max overflow-x-scroll gap-4">
                 <c:forEach items="${airing}" var="anime">
                     <div class="snap-start relative group w-36 sm:w-44 lg:w-52 aspect-w-2 aspect-h-3 rounded-lg overflow-hidden">
@@ -69,7 +69,7 @@
                 <span class="mr-4">In arrivo</span><i class="mr-4 fa-solid fa-caret-up"></i><span class="mr-4">Upcoming</span><i class="mr-4 fa-solid fa-caret-up"></i>
             </div>
         </div>
-        <div class="below-m3k overflow-hidden">
+        <div class="below-m3k">
             <div class="animate-slide snap-x grid grid-rows-1 grid-flow-col auto-cols-max overflow-x-scroll gap-4">
                 <c:forEach items="${upcoming}" var="anime">
                     <div class="snap-start relative group w-36 sm:w-44 lg:w-52 aspect-w-2 aspect-h-3 rounded-lg overflow-hidden">
