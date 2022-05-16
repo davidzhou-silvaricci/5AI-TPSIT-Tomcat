@@ -53,4 +53,13 @@
         <servlet-name>AnimeUp</servlet-name>
         <url-pattern>/exercises/animeup/home</url-pattern>
     </servlet-mapping>
+	
+	<servlet>
+        <servlet-name>AnimeUp</servlet-name>
+        <servlet-class>AnimeUp</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AnimeUp</servlet-name>
+        <url-pattern>/exercises/animeup/search</url-pattern>
+    </servlet-mapping>
 </web-app>

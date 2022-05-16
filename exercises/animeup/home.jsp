@@ -15,8 +15,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container min-h-screen mx-auto px-4 py-8 sm:px-8 sm:py-16 text-gray-700 overflow-hidden">
+<body class="animeup-home">
+    <div class="container min-h-screen mx-auto px-4 py-8 sm:px-8 sm:py-16 text-gray-700">
         <div class="mb-8 flex flex-col items-center">
             <h1 class="mb-8 font-extrabold text-5xl">Anime<span class="text-orange-500">Up</span></h1>
             <form class="w-full mb-8 flex justify-center gap-2" id="search" method="get" action="search">
@@ -28,12 +28,12 @@
                 </div>
             </form>
         </div>
-        <div id="0" class="marquee3k" data-pausable="true">
+        <div id="0" class="marquee3k overflow-hidden" data-pausable="true">
             <div class="mb-6 py-4 font-bold text-3xl text-gray-300 border border-x-0 border-y-2 uppercase italic transition-colors duration-500 select-none">
                 <span class="mr-4">In tendenza</span><i class="mr-4 fa-solid fa-caret-up"></i><span class="mr-4">Trending</span><i class="mr-4 fa-solid fa-caret-up"></i>
             </div>
         </div>
-        <div class="below-m3k mb-16">
+        <div class="below-m3k mb-16 overflow-hidden">
             <div class="animate-slide snap-x grid grid-rows-1 grid-flow-col auto-cols-max overflow-x-scroll gap-4">
                 <c:forEach items="${bypopularity}" var="anime">
                     <div class="snap-start relative group w-36 sm:w-44 lg:w-52 aspect-w-2 aspect-h-3 rounded-lg overflow-hidden">
@@ -46,12 +46,12 @@
                 </c:forEach>
             </div>
         </div>
-        <div id="1" class="marquee3k" data-pausable="true">
+        <div id="1" class="marquee3k overflow-hidden" data-pausable="true">
             <div class="mb-6 py-4 font-bold text-3xl text-gray-300 border border-x-0 border-y-2 uppercase italic transition-colors duration-500 select-none">
                 <span class="mr-4">In corso</span><i class="mr-4 fa-solid fa-caret-up"></i><span class="mr-4">Ongoing</span><i class="mr-4 fa-solid fa-caret-up"></i>
             </div>
         </div>
-        <div class="below-m3k mb-16">
+        <div class="below-m3k mb-16 overflow-hidden">
             <div class="animate-slide snap-x grid grid-rows-1 grid-flow-col auto-cols-max overflow-x-scroll gap-4">
                 <c:forEach items="${airing}" var="anime">
                     <div class="snap-start relative group w-36 sm:w-44 lg:w-52 aspect-w-2 aspect-h-3 rounded-lg overflow-hidden">
@@ -64,12 +64,12 @@
                 </c:forEach>
             </div>
         </div>
-        <div id="2" class="marquee3k" data-pausable="true">
+        <div id="2" class="marquee3k overflow-hidden" data-pausable="true">
             <div class="mb-6 py-4 font-bold text-3xl text-gray-300 border border-x-0 border-y-2 uppercase italic transition-colors duration-500 select-none">
                 <span class="mr-4">In arrivo</span><i class="mr-4 fa-solid fa-caret-up"></i><span class="mr-4">Upcoming</span><i class="mr-4 fa-solid fa-caret-up"></i>
             </div>
         </div>
-        <div class="below-m3k">
+        <div class="below-m3k overflow-hidden">
             <div class="animate-slide snap-x grid grid-rows-1 grid-flow-col auto-cols-max overflow-x-scroll gap-4">
                 <c:forEach items="${upcoming}" var="anime">
                     <div class="snap-start relative group w-36 sm:w-44 lg:w-52 aspect-w-2 aspect-h-3 rounded-lg overflow-hidden">
@@ -86,9 +86,6 @@
     <footer class="group py-12 md:py-16 text-center bg-gray-100 text-gray-400">
         <p>Made with <i class="fas fa-heart transition duration-1000 ease-in-out group-hover:animate-ping group-hover:text-red-500"></i> in Italy</p>
     </footer>
-    <!-- Tippy.js-->
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
     <!-- Marquee3000 -->
     <script src="https://cdn.jsdelivr.net/npm/marquee3000@1.1.1/marquee3k.min.js"></script>
     <!-- Custom script -->
